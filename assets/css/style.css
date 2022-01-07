@@ -88,11 +88,62 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 #header .logo img {
-  max-height: 40px;
+  max-height: 60px;
 }
 #header.header-scrolled, #header.header-inner-pages {
-  background: rgba(0, 0, 0, 0.9);
+  background: transparent;
   padding: 12px 0;
+}
+
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+  position: fixed;
+  /* visibility: hidden; */
+  right: 15px;
+  bottom: 15px;
+  /* opacity: 0; */
+  z-index: 996;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  transition: all 0.4s;
+
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  /* padding: 16px; */
+  padding-top: 6px;
+  /* transition: all 0.3s ease; */
+  color: white;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.instagram {
+background: #d6249f; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  color: white;
+  margin-bottom: 4px;
+}
+
+.icon-bar.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 /*--------------------------------------------------------------
@@ -123,8 +174,9 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   font-family: "Raleway", sans-serif;
-  color: #fff;
+  color: #000000;
   font-size: 15px;
+  font-weight: bold;
   padding: 0 4px;
   white-space: nowrap;
   transition: 0.3s;
@@ -153,7 +205,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: scaleX(1);
 }
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #fff;
+  color: #000000;
 }
 .navbar .dropdown ul {
   display: block;
@@ -213,7 +265,7 @@ h1, h2, h3, h4, h5, h6 {
 * Mobile Navigation
 */
 .mobile-nav-toggle {
-  color: #fff;
+  color: #000000;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -308,13 +360,14 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/DogLogikToys1.jpeg") top center;
+  background: url("../img/DLBackground.jpeg") top center;
   background-size: cover;
   position: relative;
+  /* opacity: 0.2; */
 }
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.3);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -334,6 +387,16 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   padding: 0 15px;
 }
+
+.homeimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50%;
+  /* width: 50%; */
+  padding-bottom: 30px;
+}
+
 #hero h3 {
   /* background: rgba(255, 255, 255, 0.1); */
   color: #fff;
@@ -358,19 +421,20 @@ h1, h2, h3, h4, h5, h6 {
 #hero .btn-get-started {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: bold;
   font-size: 13px;
   letter-spacing: 1px;
   display: inline-block;
   padding: 8px 30px 9px 30px;
   border-radius: 50px;
   transition: 0.5s;
-  border: 2px solid #fff;
-  color: #fff;
+  border: 4px solid #000000;
+  color: #000000;
 }
 #hero .btn-get-started:hover {
   background: #0067ba;
   border: 2px solid #0067ba;
+  color: #ffffff;
 }
 @media (min-width: 1024px) {
   #hero {
@@ -1587,7 +1651,7 @@ section {
 #footer {
   color: #444444;
   font-size: 14px;
-  background: #f6f4f4;
+  background: transparent;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 #footer .footer-top {
